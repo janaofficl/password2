@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Generate <br><span>Random password</span></h1>
+        <div class="length">
+            <h3>Enter password length:</h3>
+            <input type="number" id="plength" placeholder="Length" min="8" max="12">
+        </div>      
+        <div class="display">
+            <input type="text" id="password" placeholder="password">
+            <img src="copy.svg" onclick="copy()">
+        </div>
+        <div class="container2">
+            <button onclick="Generate()">Generate Password</button>
+        </div>
+    </div>
+
+    <script>
+        function Generate() {
+            let length = document.getElementById("plength").value;
+            let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+"
+            var password = ""
+            for (let i = 0; i < length; i++) {
+                let random = Math.floor(Math.random() * charset.length)
+                password += charset[random]
+            }
+            document.getElementById("password").value = password
+        }
+
+        function copy() {
+            let inputBox=document.getElementById("password")
+            inputBox.select()
+            document.execCommand("copy")
+        }
+    </script>
+</body>
+
+</html>

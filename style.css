@@ -42,6 +42,7 @@ body{
     border: none;
     outline: none;
     font-size: 27px;
+    width: 90%;
 }
 .container button{
     border: none;

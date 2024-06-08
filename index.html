@@ -25,6 +25,11 @@
     </div>
 
     <script>
+    document.body.addEventListener('keydown',(event)=>{
+        if(event.key==='Enter'){
+            copy()
+        }
+    })
         function Generate() {
             let length = document.getElementById("plength").value;
             let charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_=+"
